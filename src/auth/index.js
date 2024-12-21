@@ -32,7 +32,7 @@ function register() {
                     user.password = password.value
                     login.value = ""
                     password.value = ""
-                    passwordcheck.value=""
+                    passwordcheck.value = ""
                     usersArr.push(user)
                     let xhrSender = new XMLHttpRequest();
                     xhrSender.open('PUT', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true)
@@ -45,7 +45,7 @@ function register() {
                                 window.scrollTo({
                                     top: 300,
                                     behavior: "smooth",
-                                  });
+                                });
                             } else {
                                 alert('Ошибка отправки. Попробуйте еще раз.');
                             }
@@ -59,7 +59,7 @@ function register() {
     }
 }
 
-function enter(){
+function enter() {
     let xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true);
     xhr2.send();
@@ -86,9 +86,9 @@ function enter(){
                                     flag1 = false
                                     localStorage.setItem('status', usersArr[i].status)
                                     localStorage.setItem('entered', 1)
-                                    localStorage.setItem('login', login.value)
+                                    localStorage.setItem('login', usersArr[i].login)
                                     alert("Вы успешно вошли в аккаунт")
-                                    window.location.href="https://artem2062.github.io/countInventoryBeta/src/main/main.html"
+                                    window.location.href = "../main/main.html"
                                 }
                             }
                         })
@@ -108,18 +108,15 @@ function enter(){
         }
     })
 }
-
-registrationButton.addEventListener('click', function () { register() })
-enterButton.addEventListener('click', function () { enter() })
-changeButton.addEventListener('click', function () {
-    window.scrollTo({
-        top: 300,
-        behavior: "smooth",
-      });
-})
-changeButton2.addEventListener('click', function () {
-    window.scrollTo({
-        top: 3500,
-        behavior: "smooth",
-      });
-})
+if (document.title == "Регистрация") {
+    registrationButton.addEventListener('click', function () { register() })
+    changeButton.addEventListener('click', function () {
+        window.location.href = "enter.html"
+    })
+}
+if (document.title == "Вход") {
+    enterButton.addEventListener('click', function () { enter() })
+    changeButton2.addEventListener('click', function () {
+        window.location.href = "registration.html"
+    })
+}
