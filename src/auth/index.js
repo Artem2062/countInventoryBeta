@@ -42,6 +42,10 @@ function register() {
                         if (xhrSender.readyState == 4) {
                             if (xhrSender.status == 200) {
                                 alert('Пользователь успешно зарегестрирован!');
+                                window.scrollTo({
+                                    top: 300,
+                                    behavior: "smooth",
+                                  });
                             } else {
                                 alert('Ошибка отправки. Попробуйте еще раз.');
                             }
@@ -84,6 +88,7 @@ function enter(){
                                     localStorage.setItem('entered', 1)
                                     localStorage.setItem('login', login.value)
                                     alert("Вы успешно вошли в аккаунт")
+                                    window.location.href="https://artem2062.github.io/countInventoryBeta/src/main/main.html"
                                 }
                             }
                         })
