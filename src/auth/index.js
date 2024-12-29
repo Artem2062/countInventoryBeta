@@ -42,10 +42,6 @@ function register() {
                         if (xhrSender.readyState == 4) {
                             if (xhrSender.status == 200) {
                                 alert('Пользователь успешно зарегестрирован!');
-                                window.scrollTo({
-                                    top: 300,
-                                    behavior: "smooth",
-                                });
                             } else {
                                 alert('Ошибка отправки. Попробуйте еще раз.');
                             }
@@ -87,7 +83,6 @@ function enter() {
                                     localStorage.setItem('status', usersArr[i].status)
                                     localStorage.setItem('entered', 1)
                                     localStorage.setItem('login', usersArr[i].login)
-                                    alert("Вы успешно вошли в аккаунт")
                                     window.location.href = "../main/main.html"
                                 }
                             }
