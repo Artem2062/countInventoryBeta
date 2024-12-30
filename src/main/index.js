@@ -1,3 +1,18 @@
+
+if (localStorage.getItem('status') == "user") {
+    let templateCode =
+    `
+        <button id="exitButton">exit</button>
+        <img src="img/cart25.png" id="items">
+    `
+    let template = Handlebars.compile(templateCode)
+    let fieldul = document.querySelector('#header');
+    fieldul.innerHTML = '';
+    fieldul.innerHTML = template()
+    items.addEventListener('click',function(){
+        window.location.href="../application/main.html"
+    })
+}
 exitButton.addEventListener('click', function () {
     let xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true);
@@ -27,17 +42,3 @@ exitButton.addEventListener('click', function () {
         }
     })
 })
-if (localStorage.getItem('status') == "user") {
-    let templateCode =
-    `
-        <button id="exitButton">exit</button>
-        <img src="img/cart25.png" id="items">
-    `
-    let template = Handlebars.compile(templateCode)
-    let fieldul = document.querySelector('#header');
-    fieldul.innerHTML = '';
-    fieldul.innerHTML = template()
-    items.addEventListener('click',function(){
-        window.location.href="../application/main.html"
-    })
-}
