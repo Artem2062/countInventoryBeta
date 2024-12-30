@@ -1,5 +1,4 @@
 'use strict'
-localStorage.setItem('swaped', 0)
 let xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true);
 xhr.send();
@@ -83,6 +82,7 @@ function enter() {
                                     localStorage.setItem('status', usersArr[i].status)
                                     localStorage.setItem('entered', 1)
                                     localStorage.setItem('login', usersArr[i].login)
+                                    alert('Вы успешно вошли в аккаунт')
                                     window.location.href = "../main/main.html"
                                 }
                             }
@@ -99,19 +99,35 @@ function enter() {
                 if (flag1 == true) {
                     alert("Такого аккаунта не существует")
                 }
-            }, 800)
+            }, 1000)
         }
     })
 }
 if (document.title == "Регистрация") {
+    if(localStorage.getItem('entered')==1){
+        window.location.href="../main/main.html"
+    }
     registrationButton.addEventListener('click', function () { register() })
     changeButton.addEventListener('click', function () {
         window.location.href = "enter.html"
     })
+    document.addEventListener('keydown', function (e) {
+        if (e.key == "Enter") {
+            register()
+        }
+    })
 }
 if (document.title == "Вход") {
+    if(localStorage.getItem('entered')==1){
+        window.location.href="../main/main.html"
+    }
     enterButton.addEventListener('click', function () { enter() })
     changeButton2.addEventListener('click', function () {
         window.location.href = "registration.html"
+    })
+    document.addEventListener('keydown', function (e) {
+        if (e.key == "Enter") {
+            enter()
+        }
     })
 }

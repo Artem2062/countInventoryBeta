@@ -18,7 +18,7 @@ exitButton.addEventListener('click', function () {
                             if (xhrSender2.status == 200) {
                                 localStorage.clear()
                                 localStorage.setItem('entered', 0)
-                                window.location.href="../auth/enter.html"
+                                window.location.href = "../auth/enter.html"
                             }
                         }
                     })
@@ -27,3 +27,17 @@ exitButton.addEventListener('click', function () {
         }
     })
 })
+if (localStorage.getItem('status') == "user") {
+    let templateCode =
+    `
+        <button id="exitButton">exit</button>
+        <img src="img/cart25.png" id="items">
+    `
+    let template = Handlebars.compile(templateCode)
+    let fieldul = document.querySelector('#header');
+    fieldul.innerHTML = '';
+    fieldul.innerHTML = template()
+    items.addEventListener('click',function(){
+        window.location.href="../application/main.html"
+    })
+}
