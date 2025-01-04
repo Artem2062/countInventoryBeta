@@ -119,15 +119,7 @@ h3 {
 .card:nth-of-type(4) .card-img {
   background-image: url(https://images.unsplash.com/photo-1496429862132-5ab36b6ae330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80);
 }
-/*if(localStorage.getItem('swaped')==1){
-        let templateCode = `
-        <h1>Регистрация</h1>
-        <input class="login" id="login" placeholder=" Логин" type="email">
-        <input class="password" id="password" placeholder=" Пароль" type="password">
-        <input class="password" id="passwordcheck" placeholder=" Подтверждение пароля" type="password">
-        <button class="registration-button" id="registrationButton">Зарегестрироваться</button>
-        <p>Есть аккаунт?
-        <p id="changeButton" style="color: aqua;cursor: pointer;">Войти</p>
-        </p>
-    `
-    }*/
+/*
+  https://studyprograms.informatics.ru/api/jsonstorage/
+  https://studyprograms.informatics.ru/api/jsonstorage/?id=c4747595f25c096bed9cfe4e09722d79
+*/

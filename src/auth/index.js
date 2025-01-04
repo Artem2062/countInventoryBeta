@@ -1,6 +1,6 @@
 'use strict'
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true);
+xhr.open('GET', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=28faf24b7091ee1d7aff62af850d25bb', true);
 xhr.send();
 
 function register() {
@@ -34,7 +34,7 @@ function register() {
                     passwordcheck.value = ""
                     usersArr.push(user)
                     let xhrSender = new XMLHttpRequest();
-                    xhrSender.open('PUT', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true)
+                    xhrSender.open('PUT', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=28faf24b7091ee1d7aff62af850d25bb', true)
                     xhrSender.setRequestHeader("Content-type", "application/json");
                     xhrSender.send(JSON.stringify(usersArr));
                     xhrSender.addEventListener('readystatechange', function () {
@@ -56,7 +56,7 @@ function register() {
 
 function enter() {
     let xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true);
+    xhr2.open('GET', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=28faf24b7091ee1d7aff62af850d25bb', true);
     xhr2.send();
     xhr2.addEventListener('readystatechange', function () {
         if (xhr2.readyState == 4 && xhr2.status == 200) {
@@ -72,7 +72,7 @@ function enter() {
                     if (usersArr[i].entered == 0) {
                         usersArr[i].entered = 1
                         let xhrSender2 = new XMLHttpRequest();
-                        xhrSender2.open('PUT', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=30fcc2b1e9f760390bd12570386d21e9', true)
+                        xhrSender2.open('PUT', 'https://studyprograms.informatics.ru/api/jsonstorage/?id=28faf24b7091ee1d7aff62af850d25bb', true)
                         xhrSender2.setRequestHeader("Content-type", "application/json");
                         xhrSender2.send(JSON.stringify(usersArr));
                         xhrSender2.addEventListener('readystatechange', function () {
